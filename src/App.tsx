@@ -4,6 +4,9 @@ import PasswordEntry from "./components/PasswordEntry";
 function App() {
   return (
     <>
+      <nav className={"flex p-4 bg-gray-400"}>
+        <h1>Password Entry</h1>
+      </nav>
       <PasswordEntry />
     </>
   );
