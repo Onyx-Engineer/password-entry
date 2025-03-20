@@ -13,41 +13,47 @@ const PasswordEntry: React.FC = () => {
 
   return (
     <>
-      <h1>Password Entry</h1>
-      <div>
-        <form onSubmit={handleSubmit}>
-          <label htmlFor="password">Password:</label>
-          <input
-            onChange={debounce(
-              (e: React.FormEvent) =>
-                setPassword((e.target as HTMLInputElement).value),
-              300
-            )}
-            tabIndex={0}
-            type="password"
-            id="password"
-            placeholder="Enter password"
-            required
-          />
+      <section className={"m-4"}>
+        <form
+          className={"flex flex-col card bg-gray-100 p-4"}
+          onSubmit={handleSubmit}
+        >
+          <div className={"flex flex-col py-4"}>
+            <label htmlFor="password">Password:</label>
+            <input
+              onChange={debounce(
+                (e: React.FormEvent) =>
+                  setPassword((e.target as HTMLInputElement).value),
+                300
+              )}
+              tabIndex={0}
+              type="password"
+              id="password"
+              placeholder="Enter password"
+              required
+            />
+          </div>
 
-          <label htmlFor="confirm-password">Confirm Password:</label>
-          <input
-            onChange={debounce(
-              (e: React.FormEvent) =>
-                setConfirmPassword((e.target as HTMLInputElement).value),
-              300
-            )}
-            tabIndex={0}
-            type="confirm-password"
-            id="confirm-password"
-            placeholder="Confirm password"
-            required
-          />
+          <div className={"flex flex-col py-4"}>
+            <label htmlFor="confirm-password">Confirm Password:</label>
+            <input
+              onChange={debounce(
+                (e: React.FormEvent) =>
+                  setConfirmPassword((e.target as HTMLInputElement).value),
+                300
+              )}
+              tabIndex={0}
+              type="confirm-password"
+              id="confirm-password"
+              placeholder="Confirm password"
+              required
+            />
+          </div>
+          <button className={"bg-blue-500 py-1"} tabIndex={0} type="submit">
+            Submit
+          </button>
         </form>
-        <button tabIndex={0} type="submit">
-          Submit
-        </button>
-      </div>
+      </section>
     </>
   );
 };
